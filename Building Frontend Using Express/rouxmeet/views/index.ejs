@@ -1,0 +1,79 @@
+  <!--- Header Starts --->
+  <% include includes/header.ejs %>
+  <!--- Header Ends --->
+  <body class="home">
+    <header>
+      <div class="hero">
+        <section class="layout">
+          <div class="branding">
+            <a href="/">
+              <img src="/images/misc/rouxacademymeetups.svg" alt="Roux Academy Logo">
+            </a>
+          </div><!-- branding -->
+        </section><!-- layout -->
+      </div><!-- hero -->
+
+
+      <div class="navigation">
+        <section class="layout">
+          <ul class="nav">
+            <li><a href="/"><i class="icon-home"></i> Home</a></li>
+            <li><a href="/speakers"><i class="icon-user"></i> Speakers</a></li>
+          </ul><!-- nav -->
+        </section><!-- layout -->
+      </div><!-- navigation -->
+    </header>  
+    <% include includes/speakerslist.ejs %>
+      <section class="layout">
+        <div class="primary">
+          <div id="whoarewe">
+            <h1>Who are we?</h1>
+              <p>The Roux Academy gets thousands of submissions every year for artists interesting in participating in the CAC exhibits, and selects approximately 200 distinct pieces of contemporary art for display in their collective exhibit. In addition, 12 individuals are honored as Featured Artists - each being granted his or her own exhibit hall to display entire collections or themed pieces.</p>
+              <p>Each Featured Artist has an opportunity to speak at one of our meetups and share his or her vision, perspective, and techniques with attendees on a more personal level than at our large conference. It is truly an honor to be a CAC Featured Artist and many past students artists who were featured at CAC have gone on to brilliant careers in art.</p>
+          </div><!-- article -->
+          <div id="getbusy">
+            <h1>Get Busy!</h1>
+            <p>
+              If you want to keep up with what's going on with the group, <a href="http://www.meetup.com/">join our meetup group</a>, <a href="http://www.twitter.com/">follow us on twitter</a>. If you're in FaceBook, you can also <a href="http://www.facebook.com/">join our FaceBook group</a>.
+            </p>
+        </div><!-- article -->
+          <div id="whoshouldcome">
+            <h1>Who should come?</h1>
+            <ul>
+              <li>Anybody interested in art and the creative industry</li>
+              <li>Painters, sculptors, photographers and graphic artists</li>
+              <li>Those interested in meeting and making a connection with others in the local art scene.</li>
+            </ul>
+          </div><!-- article -->
+        </div><!-- primary -->
+        <div class="secondary">
+          <div class="nextmeeting">
+            <h1>Next Meeting</h1>
+            <p>
+              <img src="<%= appdata.meeting.where.img %>" alt="Meeting Location"/> Our Next Meeting will be on
+              <%= appdata.meeting.date %>,<%= appdata.meeting.time %> at <%= appdata.meeting.where.name %> <%= appdata.meeting.where.address %>
+            </p>
+
+          </div>
+
+          <div class="artworklist">
+            <h1>Artwork on display</h1>
+            <p>While you attend the conference, head over to our gallery where you can check works from some of the speakers</p>
+            <div class="pixelgrid">
+              <% if(artwork.length > 0){%>
+                <% for(i=0; i<artwork.length; i++){%>
+                  <img src="/images/artwork/<%= artwork[i] %>" alt="Artwork"/>
+                <% } %>
+              <% } %>
+            </div>
+          </div>
+        </div><!-- secondary -->
+      </section><!-- layout -->
+
+    <!--- Footer Starts --->
+      <% include includes/footer.ejs %>
+    <!--- Header Starts --->
+
+      
+  
+
